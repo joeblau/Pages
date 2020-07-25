@@ -62,6 +62,7 @@ struct PageViewController: UIViewControllerRepresentable {
     }
 
     func updateUIViewController(_ pageViewController: UIPageViewController, context: Context) {
+        if currentPage ==  context.coordinator.parent.currentPage { return }
         let previousPage = context.coordinator.parent.currentPage
         context.coordinator.parent = self
 
